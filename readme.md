@@ -210,9 +210,9 @@ The dataset contains patient demographic, lifestyle, and clinical information, i
 
 Data Analytics | Python | SQL | Streamlit | Power BI
 
-GitHub: https://github.com/your-username
+GitHub: https://github.com/bhuvaneshwaran7867-png
 
-LinkedIn: https://linkedin.com/in/your-profile
+LinkedIn: www.linkedin.com/in/c-bhuvaneshwaran
 
 ---
 
