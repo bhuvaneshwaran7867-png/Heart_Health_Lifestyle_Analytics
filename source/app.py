@@ -60,7 +60,7 @@ div[data-testid="metric-container"]{
 @st.cache_data
 def load_data():
 
-    df = pd.read_csv("Cleaned_data.csv")
+    df = pd.read_csv(r"Cleaned_data.csv")
 
     bins=[18,30,40,50,60,100]
 
@@ -123,7 +123,7 @@ filtered=df[
 # HEADER
 # ----------------------------------------------------------
 
-st.title("❤️ Heart Health & Lifestyle Analytics")
+st.title("🫀 Heart Health & Lifestyle Analytics")
 
 st.caption(
 """
@@ -165,7 +165,7 @@ c1.metric(
 )
 
 c2.metric(
-    "❤️ Heart Attack",
+    "🫀 Heart Attack",
     heart_cases
 )
 
@@ -832,7 +832,7 @@ st.markdown("""
 
 - 🚭 Promote smoking cessation programs.
 - 🧠 Conduct stress-management workshops.
-- ❤️ Organize cholesterol and BMI screening camps.
+- 🫀 Organize cholesterol and BMI screening camps.
 - 🏃 Encourage regular physical activity.
 
 ### Medium Priority Actions
@@ -965,7 +965,7 @@ st.markdown(
     <center>
 
     <h4 style='color:#12355B;'>
-    ❤️ Heart Health & Lifestyle Analytics
+    🫀 Heart Health & Lifestyle Analytics
     </h4>
 
     <p style='color:gray;'>
