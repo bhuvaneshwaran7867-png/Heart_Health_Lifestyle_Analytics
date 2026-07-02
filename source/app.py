@@ -391,55 +391,7 @@ fig_exercise.update_layout(
 
 col4.plotly_chart(fig_exercise,width="stretch")
 
-# ==========================================================
-# BMI & CHOLESTEROL
-# ==========================================================
 
-col5, col6 = st.columns(2)
-
-fig_bmi = px.scatter(
-    filtered,
-    x="BMI",
-    y="Cholesterol",
-    color="Heart_Attack",
-    size="Age",
-    hover_data=[
-        "Gender",
-        "City",
-        "Occupation"
-    ],
-    color_discrete_map={
-        "Yes": "#E63946",
-        "No": "#52B788"
-    }
-)
-
-fig_bmi.update_layout(
-    title="BMI vs Cholesterol",
-    plot_bgcolor="white",
-    paper_bgcolor="white"
-)
-
-col5.plotly_chart(fig_bmi, width="stretch")
-
-fig_hist = px.histogram(
-    filtered,
-    x="BMI",
-    color="Heart_Attack",
-    nbins=25,
-    color_discrete_map={
-        "Yes": "#E63946",
-        "No": "#52B788"
-    }
-)
-
-fig_hist.update_layout(
-    title="BMI Distribution",
-    plot_bgcolor="white",
-    paper_bgcolor="white"
-)
-
-col6.plotly_chart(fig_hist, width="stretch")
 
 # ==========================================================
 # BMI ANALYTICS
