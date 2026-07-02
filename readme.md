@@ -1,10 +1,10 @@
-# ❤️ Heart Health & Lifestyle Analytics Dashboard
+# 🫀 Heart Health & Lifestyle Analytics Dashboard
 
 > **An interactive Streamlit dashboard for analyzing lifestyle and health factors associated with heart attack risk using data-driven insights.**
 
 ---
 
-## 📖 Overview
+##  Overview
 
 The **Heart Health & Lifestyle Analytics Dashboard** is an interactive Business Intelligence (BI) application built using **Python**, **Streamlit**, **Pandas**, and **Plotly**.
 
@@ -12,7 +12,7 @@ The dashboard helps healthcare organizations identify major heart attack risk fa
 
 ---
 
-## 🎯 Problem Statement
+##  Problem Statement
 
 Heart attacks are increasingly being reported across different age groups due to changing lifestyles and health conditions.
 
@@ -28,29 +28,29 @@ This dashboard addresses these questions through interactive visualizations and 
 
 ---
 
-## ✨ Features
+## Features
 
-* 📊 Executive KPI Dashboard
-* ❤️ Heart Attack Risk Gauge
-* 🎯 Interactive Sidebar Filters
-* 👥 Age Group Risk Analysis
-* 🧠 Stress Level Analysis
-* 😴 Sleep Pattern Analysis
-* 🏃 Exercise Habit Analysis
-* ⚖️ BMI & Cholesterol Analysis
-* 🚬 Smoking Impact Analysis
-* 🍷 Alcohol Consumption Analysis
-* 🍔 Fast Food Consumption Analysis
-* 🌍 City-wise Risk Analysis
-* 💼 Occupation-wise Risk Analysis
-* 📈 Correlation Heatmap
-* 💡 Executive Insights
-* 📋 Strategic Recommendations
-* 📥 Download Filtered Dataset
+*  Executive KPI Dashboard
+*  Heart Attack Risk Gauge
+*  Interactive Sidebar Filters
+*  Age Group Risk Analysis
+*  Stress Level Analysis
+*  Sleep Pattern Analysis
+*  Exercise Habit Analysis
+*  BMI & Cholesterol Analysis
+*  Smoking Impact Analysis
+*  Alcohol Consumption Analysis
+*  Fast Food Consumption Analysis
+*  City-wise Risk Analysis
+*  Occupation-wise Risk Analysis
+*  Correlation Heatmap
+*  Executive Insights
+*  Strategic Recommendations
+*  Download Filtered Dataset
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 | Technology | Purpose                    |
 | ---------- | -------------------------- |
@@ -62,7 +62,7 @@ This dashboard addresses these questions through interactive visualizations and 
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
 ```text
 Heart_Health_Lifestyle_Analytics/
@@ -75,7 +75,7 @@ Heart_Health_Lifestyle_Analytics/
 
 ---
 
-## 📊 Dashboard Modules
+##  Dashboard Modules
 
 ### Executive Dashboard
 
@@ -111,7 +111,7 @@ Heart_Health_Lifestyle_Analytics/
 
 ---
 
-## 📈 Key Business Insights
+##  Key Business Insights
 
 The dashboard enables stakeholders to:
 
@@ -123,7 +123,7 @@ The dashboard enables stakeholders to:
 
 ---
 
-## 🚀 Getting Started
+##  Getting Started
 
 ### 1. Clone the Repository
 
@@ -153,7 +153,7 @@ The application will open in your default web browser.
 
 ---
 
-## 📸 Dashboard Preview
+##  Dashboard Preview
 
 > Add screenshots of your dashboard inside a folder named **screenshots** and reference them here.
 
@@ -172,7 +172,7 @@ Example:
 
 ---
 
-## 📊 Dataset
+##  Dataset
 
 The dataset contains patient demographic, lifestyle, and clinical information, including:
 
@@ -192,7 +192,7 @@ The dataset contains patient demographic, lifestyle, and clinical information, i
 
 ---
 
-## 🎯 Future Enhancements
+##  Future Enhancements
 
 * Machine Learning-based Heart Attack Prediction
 * Real-time Healthcare Dashboard
@@ -204,7 +204,7 @@ The dataset contains patient demographic, lifestyle, and clinical information, i
 
 ---
 
-## 👨‍💻 Author
+##  Author
 
 **Bhuvaneshwaran C**
 
@@ -216,7 +216,7 @@ LinkedIn: www.linkedin.com/in/c-bhuvaneshwaran
 
 ---
 
-## 📜 License
+##  License
 
 This project is developed for educational and portfolio purposes.
 
