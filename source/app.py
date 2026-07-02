@@ -57,12 +57,17 @@ div[data-testid="metric-container"]{
 # LOAD DATA
 # ----------------------------------------------------------
 
+from pathlib import Path
+
 @st.cache_data
 def load_data():
+    csv_path = Path(__file__).resolve().parent / "Cleaned_data.csv"
+    df = pd.read_csv(csv_path)
 
-    df = pd.read_csv(r"Cleaned_data.csv")
+    bins = [18, 30, 40, 50, 60, 100]
+    # Rest of your code...
 
-    bins=[18,30,40,50,60,100]
+    return df
 
     labels=[
         "18-30",
