@@ -58,14 +58,25 @@ div[data-testid="metric-container"]{
 # ----------------------------------------------------------
 
 from pathlib import Path
+import pandas as pd
 
 @st.cache_data
 def load_data():
     csv_path = Path(__file__).resolve().parent / "Cleaned_data.csv"
     df = pd.read_csv(csv_path)
 
+    # Remove extra spaces from column names
+    df.columns = df.columns.str.strip()
+
     bins = [18, 30, 40, 50, 60, 100]
-    # Rest of your code...
+    labels = ["18-30", "31-40", "41-50", "51-60", "60+"]
+
+    df["Age_Group"] = pd.cut(
+        df["Age"],
+        bins=bins,
+        labels=labels,
+        include_lowest=True
+    )
 
     return df
 
