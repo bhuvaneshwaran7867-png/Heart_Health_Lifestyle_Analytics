@@ -166,9 +166,7 @@ screenshots/
 
 Example:
 
-```markdown
-![Dashboard](screenshots/dashboard_home.png)
-```
+![alt text](image.png)
 
 ---
 
