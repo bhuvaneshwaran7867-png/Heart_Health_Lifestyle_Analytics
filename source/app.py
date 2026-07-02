@@ -3,6 +3,7 @@ import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
 
+
 # ----------------------------------------------------------
 # PAGE CONFIG
 # ----------------------------------------------------------
@@ -146,11 +147,11 @@ risk=(heart_cases/total)*100
 
 avg_bmi=filtered["BMI"].mean()
 
-avg_sleep=filtered["Sleep_Hours"].mean()
+avg_sleep=filtered["Sleep_Hours"].median()
 
 avg_chol=filtered["Cholesterol"].mean()
 
-avg_stress=filtered["Stress_Level"].mean()
+avg_stress=filtered["Stress_Level"].median()
 
 # ----------------------------------------------------------
 # KPI CARDS
@@ -423,6 +424,165 @@ fig_hist.update_layout(
 )
 
 col6.plotly_chart(fig_hist, width="stretch")
+
+# ==========================================================
+# BMI ANALYTICS
+# ==========================================================
+
+st.subheader("BMI Analytics")
+
+bmi_df = filtered.copy()
+
+bmi_df["BMI Category"] = pd.cut(
+    bmi_df["BMI"],
+    bins=[0,18.5,25,30,100],
+    labels=[
+        "Underweight",
+        "Normal",
+        "Overweight",
+        "Obese"
+    ]
+)
+
+# ------------------------------
+# Row 1
+# ------------------------------
+
+col5, col6 = st.columns(2)
+
+# BMI Category Distribution
+
+bmi_category = (
+    bmi_df.groupby("BMI Category")
+    .size()
+    .reset_index(name="Patients")
+)
+
+fig_bmi_category = px.bar(
+    bmi_category,
+    x="BMI Category",
+    y="Patients",
+    text="Patients",
+    color="BMI Category",
+    color_discrete_sequence=[
+        "#43AA8B",
+        "#4D908E",
+        "#F9C74F",
+        "#F94144"
+    ]
+)
+
+fig_bmi_category.update_layout(
+    title="Patient Distribution by BMI Category",
+    plot_bgcolor="white",
+    paper_bgcolor="white",
+    showlegend=False
+)
+
+col5.plotly_chart(
+    fig_bmi_category,
+    width="stretch",
+    key="bmi_category_chart"
+)
+
+
+# BMI Distribution
+
+fig_distribution = px.histogram(
+    bmi_df,
+    x="BMI",
+    color="Heart_Attack",
+    nbins=30,
+    marginal="box",
+    color_discrete_map={
+        "Yes":"#E63946",
+        "No":"#52B788"
+    }
+)
+
+fig_distribution.update_layout(
+    title="BMI Distribution by Heart Attack Status",
+    plot_bgcolor="white",
+    paper_bgcolor="white"
+)
+
+col6.plotly_chart(
+    fig_distribution,
+    width="stretch",
+    key="bmi_distribution_chart"
+)
+
+
+
+# ------------------------------
+# Row 2
+# ------------------------------
+
+col7, col8 = st.columns(2)
+
+# BMI vs Cholesterol
+
+fig_scatter = px.scatter(
+    bmi_df,
+    x="BMI",
+    y="Cholesterol",
+    color="Heart_Attack",
+    size="Age",
+    hover_data=[
+        "Gender",
+        "City",
+        "Occupation"
+    ],
+    color_discrete_map={
+        "Yes":"#E63946",
+        "No":"#52B788"
+    }
+)
+
+fig_scatter.update_layout(
+    title="BMI vs Cholesterol",
+    plot_bgcolor="white",
+    paper_bgcolor="white"
+)
+
+col7.plotly_chart(
+    fig_scatter,
+    width="stretch",
+    key="bmi_scatter_chart"
+)
+
+
+# Average BMI
+avg_bmi_comparison = (
+    bmi_df.groupby("Heart_Attack")["BMI"]
+    .mean()
+    .reset_index()
+)
+
+fig_avg = px.bar(
+    avg_bmi_comparison,
+    x="Heart_Attack",
+    y="BMI",
+    text_auto=".1f",
+    color="Heart_Attack",
+    color_discrete_map={
+        "Yes":"#E63946",
+        "No":"#52B788"
+    }
+)
+
+fig_avg.update_layout(
+    title="Average BMI by Heart Attack Status",
+    plot_bgcolor="white",
+    paper_bgcolor="white",
+    showlegend=False
+)
+
+col8.plotly_chart(
+    fig_avg,
+    width="stretch",
+    key="bmi_average_chart"
+)
 
 # ==========================================================
 # SMOKING & ALCOHOL
@@ -813,10 +973,12 @@ st.markdown(
     </p>
 
     <p style='color:gray;font-size:13px;'>
-    Prepared by <b>Bhuvaneshwaran C/b>
+    Prepared by <b>Bhuvaneshwaran C </b>
     </p>
 
     </center>
     """,
     unsafe_allow_html=True
 )
+
+
