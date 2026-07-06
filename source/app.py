@@ -646,7 +646,7 @@ city_df = (
     .groupby("City")
     .size()
     .reset_index(name="Cases")
-    .sort_values("Cases", ascending=False)
+    .sort_values("Cases", ascending=True)
 )
 
 fig_city = px.bar(
@@ -676,7 +676,7 @@ occupation_df = (
     .groupby("Occupation")
     .size()
     .reset_index(name="Cases")
-    .sort_values("Cases", ascending=False)
+    .sort_values("Cases", ascending=True)
 )
 
 fig_job = px.bar(
